@@ -1,0 +1,17 @@
+<tr data-id="<%- room.id %>" data-model="room">
+		
+			<td><%- room.id %></td>
+			<td><%- room.creator %></td>
+			<td><%- room.name %></td>
+			
+
+			
+			<td><a href="/room/show/<%- room.id %>" class="btn btn-small btn-primary">Show</a></td>
+			
+			<td><form action="/room/destroy/<%- room.id %>" method="POST">
+				<input type="hidden" name="_method" value="delete"/>
+				<input type="submit" class="btn btn-sm btn-danger" value="Delete"/>
+				<input type="hidden" class="_csrf" name="_csrf" value="<%- _csrf %>" />
+				</form>
+			</td>
+</tr>

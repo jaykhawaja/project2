@@ -1,0 +1,42 @@
+
+
+<div class="container">
+	<h3>Admin Page: Rooms</h3>
+	<table class='table'>
+		<tr>
+			
+			<th>ID</th>
+			<th>Creator</th>
+			<th>Title</th>
+			
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+
+		<% _.each(rooms, function(room) { %>
+		<tr data-id="<%= room.id %>" data-model="room">
+		
+		
+
+			<td><%= room.id %></td>
+			<td><%= room.creator %></td>
+			<td><%= room.name %></td>
+			
+
+			
+			<td><a href="/room/show/<%= room.id %>" class="btn btn-sm btn-primary">Show</a></td>
+			
+
+			<td><form action="/room/destroy/<%= room.id %>" method="POST">
+				<input type="hidden" name="_method" value="delete"/>
+				<input type="submit" class="btn btn-sm btn-danger" value="Delete"/>
+				<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+			</form></td>
+		</tr>
+
+		<% }) %>
+
+	</table>
+
+</div>

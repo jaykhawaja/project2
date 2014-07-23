@@ -1,0 +1,58 @@
+<div class="row">
+	
+	
+		<div class="col-xs-3 col-xs-offset-2">
+			<div class="user-profile">
+			  
+					<!-- TODO: add this to the header
+					<a class="btn btn-medium btn-primary" href="/room/new">Start Broadcast</a>
+					-->
+						
+					<% if (user.admin) { %>
+						<img src="/images/admin.png"> admin
+					<% } else { %>
+						<img src="/images/pawn.png"> User
+					<% } %>
+
+						<h1><strong><%= user.name %></strong></h1>
+
+
+						<h2> <strong>Username:</strong> <%= user.username%></h2>
+
+						<h2> <strong>Contact: </strong><%= user.email %></h2>
+						<h2> <strong>url:</strong> www.example.com</h2>
+						<h2> <strong>About:</strong> 
+						Live sessions from brooklyn every
+						night 8-10pm</h2>
+
+						<a href="/user/edit/<%=user.id%>">Edit</a>
+				
+		 	</div>
+		 </div>
+		 
+
+
+	<div class="col-xs-offset-2">
+		<form action="/room/create" method="POST" id ="sign-up-form" class="form-signin">
+		<fieldset>
+		<h2 class="form-signin-heading">Live broadcast your life</h2>
+
+
+		<div class="control group">
+		<label for="name">Title:</label>
+		<input type="text" class="form-control" placeholder="e.g. party/gig/get together at my place" name="name">
+		</div>
+
+		<input type="submit" class="btn btn-lg btn-primary btn-block" value="Start Broadcast"/>
+
+		<input type="hidden"  name="_csrf" value="<%= _csrf %>" />
+
+		</fieldset>
+		</form>
+	</div>
+</div>
+
+	
+
+
+

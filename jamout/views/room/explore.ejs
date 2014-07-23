@@ -1,0 +1,32 @@
+
+<div class="container">
+	<h3>Explore Live Sessions</h3>
+	<table class='table'>
+		<tr>
+			
+			
+			<th>User</th>
+			<th>Title</th>
+			
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+
+		<% _.each(rooms, function(room) { %>
+		<tr data-id="<%= room.id %>" data-model="room">
+		
+		
+			<td><%= room.creator %></td>
+			<td><%= room.name %></td>
+			
+			
+			<td><a href="/room/show/<%= room.id %>" class="btn btn-sm btn-primary">Show</a></td>
+			
+		</tr>
+
+		<% }) %>
+
+	</table>
+
+</div>

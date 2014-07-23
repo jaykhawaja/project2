@@ -1,0 +1,2 @@
+# jamout
+### a Sails application

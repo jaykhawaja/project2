@@ -1,0 +1,18 @@
+
+
+<form action="/room/create" method="POST" id ="sign-up-form" class="form-signin">
+	<fieldset>
+	<h2 class="form-signin-heading">What are you upto?</h2>
+
+
+	<div class="control group">
+	<label for="name">Title:</label>
+	<input type="text" class="form-control" placeholder="e.g. party/gig at my place" name="name">
+	</div>
+		
+	<input type="submit" class="btn btn-lg btn-primary btn-block" value="PROCEED"/>
+
+	<input type="hidden"  name="_csrf" value="<%= _csrf %>" />
+
+</fieldset>
+</form>
